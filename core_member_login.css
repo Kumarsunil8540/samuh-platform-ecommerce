@@ -1,0 +1,507 @@
+/* --- CSS वैरियेबल्स (Variables) --- */
+:root {
+    --primary-color: #007bff;
+    --primary-dark: #0056b3;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --bg-gradient-start: #007bff;
+    --bg-gradient-end: #6610f2;
+    --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    --font-family: 'Poppins', sans-serif;
+}
+
+/* --- ग्लोबल और पेज सेटअप (Global & Page Setup) --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+}
+
+/* Language Toggle Styles */
+.hindi, .english {
+    display: block;
+}
+
+.hindi {
+    font-weight: 500;
+    font-size: 1em;
+}
+
+.english {
+    font-weight: 400;
+    color: #6c757d;
+    font-size: 0.85em;
+    margin-top: 2px;
+}
+
+/* --- लॉगिन कंटेनर (Login Container) --- */
+.login-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* --- लॉगिन हेडर (Login Header) --- */
+.login-header {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.login-header h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.login-header .hindi {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.login-header .english {
+    font-size: 1.4em;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.role-badge {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+/* --- लॉगिन फॉर्म (Login Form) --- */
+.login-form {
+    text-align: left;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: var(--font-family);
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.input-group input::placeholder {
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+/* --- लॉगिन बटन (Login Button) --- */
+.btn-login {
+    width: 100%;
+    padding: 16px;
+    margin: 20px 0;
+    background: linear-gradient(135deg, var(--success-color), #218838);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-login:hover {
+    background: linear-gradient(135deg, #218838, #1e7e34);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+}
+
+.btn-login:active {
+    transform: translateY(-1px);
+}
+
+/* --- एरर मैसेज (Error Message) --- */
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #f5c6cb;
+    margin: 15px 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+.error-message .hindi {
+    color: #721c24;
+    margin-bottom: 5px;
+}
+
+.error-message .english {
+    color: #856404;
+}
+
+/* --- लॉगिन फुटर (Login Footer) --- */
+.login-footer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.login-footer p {
+    margin-bottom: 15px;
+    color: var(--success-color);
+    font-weight: 500;
+}
+
+.login-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+.link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* --- रिस्पॉन्सिव डिज़ाइन (Responsive Design) --- */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+        align-items: flex-start;
+    }
+    
+    .login-container {
+        padding: 30px 25px;
+        margin: 20px 0;
+        border-radius: 15px;
+    }
+    
+    .login-header .hindi {
+        font-size: 1.5em;
+    }
+    
+    .login-header .english {
+        font-size: 1.2em;
+    }
+    
+    .input-group input {
+        padding: 12px 14px;
+    }
+    
+    .btn-login {
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 25px 20px;
+        width: 95%;
+    }
+    
+    .login-header .hindi {
+        font-size: 1.3em;
+    }
+    
+    .login-header .english {
+        font-size: 1.1em;
+    }
+    
+    .role-badge {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+    
+    .input-group {
+        margin-bottom: 20px;
+    }
+    
+    .hindi, .english {
+        font-size: 0.9em;
+    }
+    
+    .login-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* लोडिंग एनिमेशन */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 10px;
+}
+
+/* सक्सेस स्टेट */
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #c3e6cb;
+    margin: 15px 0;
+    text-align: center;
+    font-weight: 500;
+}
+/* Add these new styles to your existing CSS */
+
+.password-hint {
+    display: block;
+    margin-top: 5px;
+    color: var(--warning-color);
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.login-help {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--warning-color);
+}
+
+.help-options {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.help-item {
+    margin: 8px 0;
+    font-size: 0.85em;
+}
+
+.help-item .hindi {
+    color: #333;
+    font-weight: 500;
+}
+
+.help-item .english {
+    color: var(--secondary-color);
+}
+
+.login-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: 6px;
+    text-align: center;
+}
+
+.link:hover {
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+}
+
+/* Debug info for development */
+.debug-info {
+    background: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #6c757d;
+}
+/* Forgot Password Link Styling - Mobile Friendly */
+.forgot-password-link {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.forgot-link {
+    color: #4361ee;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    /* Mobile optimizations */
+    min-height: 44px; /* Better touch target */
+    line-height: 1.4;
+    width: auto;
+    max-width: 280px;
+}
+
+.forgot-link:hover {
+    color: #3a0ca3;
+    background-color: #f8f9ff;
+    border-color: #4361ee;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.forgot-link .hindi,
+.forgot-link .english {
+    display: block;
+    margin: 2px 0;
+    font-size: 13px;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .forgot-password-link {
+        margin-top: 15px;
+        padding-top: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .forgot-link {
+        font-size: 15px; /* Slightly larger for mobile */
+        padding: 12px 20px;
+        min-height: 48px;
+        width: 90%;
+        max-width: 300px;
+    }
+    
+    .forgot-link .hindi,
+    .forgot-link .english {
+        font-size: 14px;
+        margin: 3px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .forgot-password-link {
+        margin-top: 12px;
+        padding-top: 10px;
+    }
+    
+    .forgot-link {
+        font-size: 14px;
+        padding: 14px 22px;
+        min-height: 52px;
+        width: 95%;
+        max-width: none;
+    }
+    
+    .forgot-link .hindi,
+    .forgot-link .english {
+        font-size: 13px;
+        margin: 4px 0;
+    }
+    
+    /* Better touch experience for mobile */
+    .forgot-link:active {
+        background-color: #eef2ff;
+        transform: scale(0.98);
+    }
+}
+
+/* For very small screens */
+@media (max-width: 360px) {
+    .forgot-link {
+        padding: 12px 16px;
+        min-height: 50px;
+    }
+    
+    .forgot-link .hindi,
+    .forgot-link .english {
+        font-size: 12px;
+    }
+}
+
+/* Tablet optimization */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .forgot-link {
+        padding: 11px 19px;
+        min-height: 46px;
+    }
+}
+
+/* Ensure proper spacing on all devices */
+@media (hover: none) and (pointer: coarse) {
+    /* For touch devices where hover doesn't work well */
+    .forgot-link:hover {
+        transform: none;
+        background-color: transparent;
+        border-color: transparent;
+    }
+    
+    .forgot-link:active {
+        background-color: #f8f9ff;
+        border-color: #4361ee;
+        transform: scale(0.95);
+    }
+}

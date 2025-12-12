@@ -1,0 +1,317 @@
+/* header.css - Only Header Styles */
+
+/* --- सामान्य रीसेट और टाइपोग्राफी --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- हेडर संरचना --- */
+header {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px;
+}
+
+/* --- लोगो स्टाइल --- */
+.logo a {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.logo a:hover {
+    color: #e6f2ff;
+}
+
+/* --- नेविगेशन लिंक --- */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a,
+.nav-links button {
+    display: block;
+    padding: 10px 16px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+/* --- यूजर वेलकम मैसेज --- */
+.user-welcome span {
+    color: #e6f2ff;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+
+/* --- बटन स्टाइलिंग --- */
+.btn-dashboard {
+    background-color: #28a745;
+    border: 2px solid #28a745;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.btn-dashboard:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    transform: translateY(-2px);
+}
+
+.btn-logout {
+    background-color: #dc3545;
+    border: 2px solid #dc3545;
+    color: #fff !important;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+.btn-login,
+.btn-signup {
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.btn-login:hover,
+.btn-signup:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* --- ड्रॉपडाउन मेनू स्टाइलिंग --- */
+.nav-dropdown-parent {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    min-width: 280px;
+    padding: 8px 0;
+    margin-top: 8px;
+    border: 1px solid #e0e0e0;
+
+    /* Animation properties */
+    display: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    visibility: hidden;
+    z-index: 1001;
+}
+
+.dropdown-menu.active {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    padding: 12px 20px;
+    white-space: nowrap;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    padding-left: 25px;
+}
+
+/* ड्रॉपडाउन में डिवाइडर और सबटाइटल */
+.dropdown-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 8px 0;
+}
+
+.dropdown-subtitle {
+    padding: 8px 20px 4px;
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- हैमबर्गर मेनू (मोबाइल के लिए) --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1002;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+/* हैमबर्गर एक्टिव स्टेट */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* --- रिस्पॉन्सिव डिज़ाइन (768px से नीचे) --- */
+@media (max-width: 768px) {
+    .header-container {
+        min-height: 60px;
+    }
+
+    .logo a {
+        font-size: 1.6rem;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 5px 0;
+        width: 100%;
+    }
+
+    .nav-links a,
+    .nav-links button {
+        width: 100%;
+        padding: 12px 16px;
+        text-align: left;
+        border-radius: 6px;
+    }
+
+    /* मोबाइल में ड्रॉपडाउन */
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+        box-shadow: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .dropdown-menu li a {
+        padding: 10px 16px;
+    }
+
+    .user-welcome span {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* बहुत छोटे स्क्रीन के लिए */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .logo a {
+        font-size: 1.4rem;
+    }
+    
+    .nav-links a,
+    .nav-links button {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+}

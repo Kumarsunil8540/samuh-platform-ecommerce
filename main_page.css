@@ -1,0 +1,425 @@
+/* -------------------------------------------------------------------------- */
+/* 1. BASE STYLES & TYPOGRAPHY - IMPROVED */
+/* -------------------------------------------------------------------------- */
+
+:root {
+    --primary-color: #007bff; /* Blue */
+    --primary-dark: #0056b3;
+    --secondary-color: #6c757d;
+    --accent-color: #28a745;
+    --token-color: #8B5CF6; /* Purple for token */
+    --text-color-dark: #1F2937;
+    --text-color-light: #4B5563;
+    --background-light: #F8F9FA;
+    --background-white: #FFFFFF;
+    --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color-dark);
+    background-color: var(--background-white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Language Toggle Styles */
+.hindi, .english {
+    display: block;
+}
+
+.hindi {
+    font-weight: 500;
+}
+
+.english {
+    font-weight: 400;
+    color: var(--text-color-light);
+    font-size: 0.9em;
+    margin-top: 2px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. LAYOUT AND MAIN CONTENT */
+/* -------------------------------------------------------------------------- */
+
+.main-content {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. HERO SECTION - IMPROVED */
+/* -------------------------------------------------------------------------- */
+
+.hero {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    text-align: center;
+    padding: 6rem 1rem;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,0 1000,1000"/></svg>');
+    background-size: cover;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-title .hindi {
+    font-size: 1.1em;
+    margin-bottom: 0.5rem;
+}
+
+.hero-title .english {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. BUTTON STYLES - IMPROVED */
+/* -------------------------------------------------------------------------- */
+
+.btn {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 180px;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* TOKEN BUTTON STYLES */
+.btn-token {
+    background-color: var(--token-color);
+    border-color: var(--token-color);
+    color: white;
+}
+
+.btn-token:hover {
+    background-color: #7C3AED;
+    border-color: #7C3AED;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.btn-large {
+    padding: 1.2rem 3rem;
+    font-size: 1.1rem;
+    min-width: 220px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 5. FEATURES SECTION */
+/* -------------------------------------------------------------------------- */
+
+.features {
+    padding: 6rem 0;
+    background-color: var(--background-light);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: var(--text-color-dark);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: white;
+    padding: 2.5rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color-dark);
+}
+
+.feature-card p {
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 6. HOW IT WORKS SECTION */
+/* -------------------------------------------------------------------------- */
+
+.how-it-works {
+    padding: 6rem 0;
+    background: white;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.step {
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+    box-shadow: var(--shadow-light);
+}
+
+.step h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-color-dark);
+}
+
+.step p {
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 7. STATS SECTION */
+/* -------------------------------------------------------------------------- */
+
+.stats {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat {
+    padding: 1.5rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 8. CTA SECTION */
+/* -------------------------------------------------------------------------- */
+
+.cta {
+    padding: 6rem 0;
+    background: var(--background-light);
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-color-dark);
+}
+
+.cta-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color-light);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 9. RESPONSIVE DESIGN */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 1rem;
+        min-height: 70vh;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .features, .how-it-works, .cta {
+        padding: 4rem 0;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
